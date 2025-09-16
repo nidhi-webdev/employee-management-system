@@ -2,8 +2,8 @@ import React from 'react'
 
 const TaskListCount = () => {
   return (
-    <div className='flex justify-between screen gap-5'>
-        <div className='h-40 w-1/2 bg-red-400'>
+    <div className='flex mt-10 justify-between screen gap-5'>
+        <div className=' rounded-xl w-[45%] py-5 px-10  bg-red-400'>
 
         </div>
       
