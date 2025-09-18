@@ -7,8 +7,8 @@ const App = () => {
   return (
    <div className='m-10'> 
    {/* <Login /> */}
-   {/* <EmployeeDashboard /> */}
-   <AdminDashboard />
+   <EmployeeDashboard />
+   {/* <AdminDashboard /> */}
    </div>
   )
 }

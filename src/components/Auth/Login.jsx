@@ -13,7 +13,7 @@ const Login = () => {
 
     return (
         <div className='flex h-screen w-screen  items-center justify-center'>
-            <div className='border-1 border-emerald-600 px-6 py-10 rounded-xl'>
+            <div className='border-1 border-emerald-600 px-15 py-20 rounded-xl'>
                 <form onSubmit={submithandler}
                     className='flex flex-col justify-between items-center'>
                     <input required 
