@@ -2,26 +2,47 @@ import React from 'react'
 import Header from '../Others/Header'
 
 const AdminDashboard = () => {
-  return (
-    <div>
-      <Header />
-      <div>
-        <form>
-            <h3> Task Tittle </h3>
-            <input type='text' placeholder='Make a UI Design'className='bg-white' />
-            <h3> Description </h3>
-            <textarea name='' id='' cols="30" rows="10" className='bg-white'> </textarea>
-            <h3> Date </h3>
-            <input type='date' className='bg-white'/>
-            <h3> Asign To  </h3>
-            <input type='text' placeholder='Employee Name' />
-            <h3> Category </h3>
-            <input type='text' placeholder='Design, Dev etc' />
-            <button> Create Task </button>
-        </form>
-      </div>
-    </div>
-  )
+    return (
+        <div className='h-screen w-full p-7'>
+            <Header />
+            <div className='p-5 bg-[#1c1c1c] mt-7 rounded'>
+                <form className='flex flex-wrap w-full items-start justify-between'>
+                    <div className='w-1/2'>
+                        <div>
+                            <h3 className='text-sm text-gray-300 mb-0.5'> Task Tittle </h3>
+                            <input type='text' placeholder='Make a UI Design' className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400'
+                            
+                            />
+                        </div>
+                        <div>
+                            <h3 className='text-sm text-gray-300 mb-0.5'> Date </h3>
+                            <input type='date' className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
+                        </div>
+
+                        <div>
+                            <h3 className='text-sm text-gray-300 mb-0.5'> Asign To  </h3>
+                            <input type='text' placeholder='Employee Name' className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
+                        </div>
+
+                        <div>
+                            <h3 className='text-sm text-gray-300 mb-0.5'> Category </h3>
+                            <input type='text' placeholder='Design, Dev etc' className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
+                        </div>
+                    </div>
+
+
+                    <div className='w-1/2 flex flex-col items-start'>
+                        <h3 className='text-sm text-gray-300 mb-0.5'> Description </h3>
+                        <textarea name='' id='' cols="30" rows="10" className='w-full h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border-[1px] border-gray-400'> </textarea>
+                        <button className='w-full mt-4 text-sm rounded px-5 py-3 bg-emerald-500 cursor-pointer hover:bg-emerald-600'> Create Task </button>
+                    </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    )
 }
 
 export default AdminDashboard

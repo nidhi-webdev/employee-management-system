@@ -2,8 +2,19 @@
 
 body {
   background-color: black;
-  color: white;
+  /* color: white; */
 }
 #tasklist::-webkit-scrollbar {
  display: none;
+}
+input[type="date"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #9CA3AF;
+}
+input[type="date"]::-moz-date-input {
+  color: #9CA3AF;
 }
