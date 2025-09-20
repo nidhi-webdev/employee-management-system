@@ -12,8 +12,8 @@ const AuthProvider = ({ children }) => {
   const [userData, setuserData] = useState(null)
 
   useEffect(() => {
-    const { employeesData, adminData } = getLocalStorage()
-    setuserData({ employeesData, adminData })
+    const { employees, admin } = getLocalStorage()
+    setuserData({ employees, admin })
 
   }, [])
 

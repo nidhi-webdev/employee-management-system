@@ -16,10 +16,13 @@ const App = () => {
 
   const [user, setUser] = useState(null)
 
+  const authData = useContext(AuthContext)
+ 
+
   const handleLogin = (email, password) => {
-    if (email == 'admin@example.com' && password == '123') {
+    if (authData && authData.admin.find(emp => emp.email == email && emp.password == password)) {
       setUser('Admin')
-    } else if (email == 'john.doe@example.com' && password == '123') {
+    } else if (authData && authData.employees.find(emp => emp.email == email && emp.password == password)) {
       setUser('Employee')
     }
     else {
@@ -27,8 +30,6 @@ const App = () => {
     }
   }
 
-  const data = useContext(AuthContext)
-  console.log(data)
 
   return (
     <div className='m-10'>
