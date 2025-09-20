@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Login from './components/Auth/Login'
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 import { useEffect } from 'react'
 import { setLocalStorage, getLocalStorage } from './utils/locaStorage'
+import { AuthContext } from './context/AuthProvider'
 
 
 const App = () => {
@@ -25,6 +26,9 @@ const App = () => {
       alert("Invalid Credentail")
     }
   }
+
+  const data = useContext(AuthContext)
+  console.log(data)
 
   return (
     <div className='m-10'>
