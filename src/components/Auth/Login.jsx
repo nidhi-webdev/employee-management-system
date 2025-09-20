@@ -22,7 +22,7 @@ const Login = () => {
                         setEmail(e.target.value)
                     }}
                     className='border-2 rounded-full border-emerald-600 py-3 px-3 text-xl 
-                    outline-none placeholder:text-gray-400 mb-5 '
+                    outline-none  mb-5 placeholder-gray-400 text-white'
                         type='email' placeholder='Enter Your email' />
                     <input 
                     value={password}
@@ -30,7 +30,7 @@ const Login = () => {
                         setPassword(e.target.value)
                     }}
                     required className='border-2 rounded-full border-emerald-600 py-3 px-3 text-xl
-                    outline-none placeholder:text-gray-400 mb-5'
+                    outline-none  mb-5 placeholder-gray-400 text-white'
                         type='password' placeholder='Enter your password' />
                     <button className='border-2 rounded-full bg-emerald-600 py-3 px-5 text-xl
                     outline-none text-emerald-100 mt-5'>
