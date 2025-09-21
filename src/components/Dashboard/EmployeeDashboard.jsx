@@ -3,10 +3,10 @@ import Header from '../Others/Header'
 import TaskListCount from '../Others/TaskListCount'
 import TaskList from '../../TaskList/TaskList'
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = ({ handleLogout }) => {
   return (
     <div>
-      <Header />
+      <Header handleLogout={handleLogout} />
       <TaskListCount />
       <TaskList />
     </div>
