@@ -18,12 +18,25 @@ const App = () => {
 
   const authData = useContext(AuthContext)
  
+  useEffect(() => {
+    if(authData) {
+      const loggedInUser = localStorage.getItem("loggedInUser")
+      if(loggedInUser) {
+        setUser(loggedInUser.role)
+      }
+    }
+  
+    
+  }, [authData])
+  
 
   const handleLogin = (email, password) => {
-    if (authData && authData.admin.find(emp => emp.email == email && emp.password == password)) {
+    if (email == 'admin@example.com' && password == '123') {
       setUser('Admin')
-    } else if (authData && authData.employees.find(emp => emp.email == email && emp.password == password)) {
+      localStorage.setItem('LoggedInUser', JSON.stringify({role: 'Admin'}))
+    } else if (authData && authData.employees.find(e => e.email == email && e.password == password)) {
       setUser('Employee')
+      localStorage.setItem('LoggedInUser', JSON.stringify({role: employees}))
     }
     else {
       alert("Invalid Credentail")
@@ -34,7 +47,8 @@ const App = () => {
   return (
     <div className='m-10'>
       {!user ? <Login handleLogin={handleLogin} /> : ''}
-      {user == 'Admin' ? < AdminDashboard /> : <EmployeeDashboard />}
+      {user === 'Admin' && < AdminDashboard />}
+      {user === 'employees' && <EmployeeDashboard />}
     </div>
   )
 }
