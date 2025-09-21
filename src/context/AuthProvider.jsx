@@ -1,6 +1,6 @@
 import React, { createContext, useEffect } from 'react'
 import { useState } from 'react'
-import { getLocalStorage } from '../utils/locaStorage'
+import { getLocalStorage, setLocalStorage } from '../utils/locaStorage'
 
 
 
@@ -12,9 +12,13 @@ const AuthProvider = ({ children }) => {
   const [userData, setuserData] = useState(null)
 
   useEffect(() => {
+    // Initialize localStorage if empty
+    if (!localStorage.getItem('Employees') || !localStorage.getItem('Admin')) {
+      setLocalStorage()
+    }
+    
     const { employees, admin } = getLocalStorage()
     setuserData({ employees, admin })
-
   }, [])
 
 
@@ -22,8 +26,7 @@ const AuthProvider = ({ children }) => {
     <div>
       <AuthContext.Provider value={userData}>
         {children}
-      </ AuthContext.Provider>
-
+      </AuthContext.Provider>
     </div>
   )
 }

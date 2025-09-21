@@ -19,36 +19,46 @@ const App = () => {
   const authData = useContext(AuthContext)
  
   useEffect(() => {
+    // Initialize localStorage with data if not already present
+    if (!localStorage.getItem('Employees') || !localStorage.getItem('Admin')) {
+      setLocalStorage()
+    }
+    
     if(authData) {
       const loggedInUser = localStorage.getItem("loggedInUser")
       if(loggedInUser) {
-        setUser(loggedInUser.role)
+        const userData = JSON.parse(loggedInUser)
+        setUser(userData.role)
       }
     }
-  
-    
   }, [authData])
   
 
   const handleLogin = (email, password) => {
-    if (email == 'admin@example.com' && password == '123') {
+    if (email === 'admin@example.com' && password === '123') {
       setUser('Admin')
-      localStorage.setItem('LoggedInUser', JSON.stringify({role: 'Admin'}))
-    } else if (authData && authData.employees.find(e => e.email == email && e.password == password)) {
+      localStorage.setItem('loggedInUser', JSON.stringify({role: 'Admin'}))
+    } else if (authData && authData.employees && authData.employees.find(e => e.email === email && e.password === password)) {
+      const employee = authData.employees.find(e => e.email === email && e.password === password)
       setUser('Employee')
-      localStorage.setItem('LoggedInUser', JSON.stringify({role: employees}))
+      localStorage.setItem('loggedInUser', JSON.stringify({role: 'Employee', employeeData: employee}))
     }
     else {
-      alert("Invalid Credentail")
+      alert("Invalid Credentials")
     }
+  }
+
+  const handleLogout = () => {
+    setUser(null)
+    localStorage.removeItem('loggedInUser')
   }
 
 
   return (
     <div className='m-10'>
       {!user ? <Login handleLogin={handleLogin} /> : ''}
-      {user === 'Admin' && < AdminDashboard />}
-      {user === 'employees' && <EmployeeDashboard />}
+      {user === 'Admin' && <AdminDashboard handleLogout={handleLogout} />}
+      {user === 'Employee' && <EmployeeDashboard handleLogout={handleLogout} />}
     </div>
   )
 }
