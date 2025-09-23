@@ -1,9 +1,8 @@
 import React from 'react'
 
 const Header = ({handleLogout, employee}) => {
-  console.log("Header received employee:", employee)
   
-  // Extract email from employee object
+  // Extracting email from employee object
   const displayName = employee?.email || 'User'
 
   return (
