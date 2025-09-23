@@ -30,7 +30,7 @@ const App = () => {
       if(loggedInUser) {
         const userData = JSON.parse(loggedInUser)
         setUser(userData.role)
-        setemployee(userData.employeeData || null)
+        setemployee(userData.employeeData)
       }
     }
   }, [authData])
