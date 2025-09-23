@@ -15,6 +15,7 @@ const App = () => {
   // },)
 
   const [user, setUser] = useState(null)
+  const [employee, setemployee] = useState(null)
 
   const authData = useContext(AuthContext)
  
@@ -29,6 +30,7 @@ const App = () => {
       if(loggedInUser) {
         const userData = JSON.parse(loggedInUser)
         setUser(userData.role)
+        setemployee(userData.employeeData || null)
       }
     }
   }, [authData])
@@ -37,11 +39,15 @@ const App = () => {
   const handleLogin = (email, password) => {
     if (email === 'admin@example.com' && password === '123') {
       setUser('Admin')
+      setemployee(null)
       localStorage.setItem('loggedInUser', JSON.stringify({role: 'Admin'}))
     } else if (authData && authData.employees && authData.employees.find(e => e.email === email && e.password === password)) {
-      const employee = authData.employees.find(e => e.email === email && e.password === password)
+      const employeeObj = authData.employees.find(e => e.email === email && e.password === password)
       setUser('Employee')
-      localStorage.setItem('loggedInUser', JSON.stringify({role: 'Employee', employeeData: employee}))
+      setemployee(employeeObj)
+      set
+      localStorage.setItem('loggedInUser', JSON.stringify({role: 'Employee', employeeData: employeeObj}))
+      console.log("From HandleLogin function:", employee)
     }
     else {
       alert("Invalid Credentials")
@@ -50,6 +56,7 @@ const App = () => {
 
   const handleLogout = () => {
     setUser(null)
+    setemployee(null)
     localStorage.removeItem('loggedInUser')
   }
 
@@ -57,8 +64,8 @@ const App = () => {
   return (
     <div className='m-10'>
       {!user ? <Login handleLogin={handleLogin} /> : ''}
-      {user === 'Admin' && <AdminDashboard handleLogout={handleLogout} />}
-      {user === 'Employee' && <EmployeeDashboard handleLogout={handleLogout} />}
+      {user === 'Admin' && <AdminDashboard handleLogout={handleLogout} employee={employee} />}
+      {user === 'Employee' && <EmployeeDashboard handleLogout={handleLogout}  employee={employee}  />}
     </div>
   )
 }
