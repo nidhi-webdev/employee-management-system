@@ -39,15 +39,14 @@ const App = () => {
   const handleLogin = (email, password) => {
     if (email === 'admin@example.com' && password === '123') {
       setUser('Admin')
-      setemployee(null)
-      localStorage.setItem('loggedInUser', JSON.stringify({role: 'Admin'}))
+      setemployee({ email: 'admin@example.com', role: 'Admin' })
+      localStorage.setItem('loggedInUser', JSON.stringify({role: 'Admin', employeeData: { email: 'admin@example.com', role: 'Admin' }}))
     } else if (authData && authData.employees && authData.employees.find(e => e.email === email && e.password === password)) {
       const employeeObj = authData.employees.find(e => e.email === email && e.password === password)
       setUser('Employee')
       setemployee(employeeObj)
-      set
       localStorage.setItem('loggedInUser', JSON.stringify({role: 'Employee', employeeData: employeeObj}))
-      console.log("From HandleLogin function:", employee)
+      console.log("From HandleLogin function:", employeeObj)
     }
     else {
       alert("Invalid Credentials")
