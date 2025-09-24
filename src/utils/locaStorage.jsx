@@ -40,6 +40,12 @@ const employees = [
         "id": 2,
         "email": "jane.smith@example.com",
         "password": "123",
+        "tastCounts": {
+            "active": 3,
+            "newTask": 1,
+            "completed": 1,
+            "failed": 0
+        },
         "tasks": [
             {
                 "taskTitle": "Design Mockups",
