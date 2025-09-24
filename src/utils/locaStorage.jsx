@@ -87,6 +87,12 @@ const employees = [
         "id": 3,
         "email": "mike.jordan@example.com",
         "password": "123",
+        "tastCounts": {
+            "active": 3,
+            "newTask": 1,
+            "completed": 1,
+            "failed": 0
+        },
         "tasks": [
             {
                 "taskTitle": "Code Review",
