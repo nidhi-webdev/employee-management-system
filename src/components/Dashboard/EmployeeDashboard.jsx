@@ -8,8 +8,8 @@ const EmployeeDashboard = ({ handleLogout, employee }) => {
   return (
     <div>
       <Header handleLogout={handleLogout} employee={employee} />
-      <TaskListCount />
-      <TaskList />
+      <TaskListCount  employee={employee} />
+      <TaskList  employee={employee} />
     </div>
   )
 }

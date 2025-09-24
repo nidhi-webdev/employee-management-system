@@ -1,6 +1,7 @@
 import React from 'react'
 
-const TaskListCount = () => {
+const TaskListCount = ({employee}) => {
+    console.log("From TaskListCount", employee)
     return (
         
         <div className='flex mt-10 justify-between screen gap-5'>
