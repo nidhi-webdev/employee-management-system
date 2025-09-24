@@ -134,6 +134,12 @@ const employees = [
         "id": 4,
         "email": "lisa.wong@example.com",
         "password": "123",
+        "tastCounts": {
+            "active": 4,
+            "newTask": 1,
+            "completed": 1,
+            "failed": 1
+        },
         "tasks": [
             {
                 "taskTitle": "HR Orientation",
