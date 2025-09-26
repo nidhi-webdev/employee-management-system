@@ -1,9 +1,10 @@
 import React from 'react'
+import AcceptTask from '../TaskList/AcceptTask'
 
 const TaskList = (employee) => {
     return (
         <div id="tasklist" className='h-[55vh] w-full  mt-10 flex items-center  gap-20 flex-nowrap overflow-x-auto'>
-           
+           <AcceptTask />
             <div className=' w-[300px] p-5 bg-green-400 rounded-xl flex-shrink-0'>
                 <div className='flex justify-between items-center'>
                     <h3 className='bg-red-600 text-sm px-3 py-1 rounded'> High </h3>
