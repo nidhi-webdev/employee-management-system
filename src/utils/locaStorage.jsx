@@ -1,14 +1,14 @@
-// localStorage.clear()
+localStorage.clear() // ← Uncomment this to refresh data
 
 const employees = [
     {
         "id": 1,
         "email": "john.doe@example.com",
         "password": "123",
-        "tastCounts": {
-            "active": 3,
+        "taskCounts": {
+            "active": 1,
             "newTask": 1,
-            "completed": 1,
+            "completed": 0,
             "failed": 0
         },
         "tasks": [
@@ -38,11 +38,11 @@ const employees = [
         "id": 2,
         "email": "jane.smith@example.com",
         "password": "123",
-        "tastCounts": {
-            "active": 3,
+        "taskCounts": {
+            "active": 2,
             "newTask": 1,
             "completed": 1,
-            "failed": 0
+            "failed": 1
         },
         "tasks": [
             {
@@ -91,11 +91,11 @@ const employees = [
         "id": 3,
         "email": "mike.jordan@example.com",
         "password": "123",
-        "tastCounts": {
-            "active": 3,
+        "taskCounts": {
+            "active": 2,
             "newTask": 1,
             "completed": 1,
-            "failed": 0
+            "failed": 1
         },
         "tasks": [
             {
@@ -114,8 +114,8 @@ const employees = [
                 "taskDate": "2025-09-14",
                 "category": "Development",
                 "active": true,
-                "newTask": true,
-                "completed": true,
+                "newTask": false,
+                "completed": false,
                 "failed": false
             },
             {
@@ -123,9 +123,9 @@ const employees = [
                 "taskDescription": "Fix reported bugs in user login module.",
                 "taskDate": "2025-09-16",
                 "category": "Maintenance",
-                "active": true,
+                "active": false,
                 "newTask": true,
-                "completed": true,
+                "completed": false,
                 "failed": false
             },
             {
@@ -133,10 +133,10 @@ const employees = [
                 "taskDescription": "Perform system testing for the new release.",
                 "taskDate": "2025-09-22",
                 "category": "Testing",
-                "active": true,
-                "newTask": true,
-                "completed": true,
-                "failed": false
+                "active": false,
+                "newTask": false,
+                "completed": false,
+                "failed": true
             }
         ]
     },
@@ -144,11 +144,11 @@ const employees = [
         "id": 4,
         "email": "lisa.wong@example.com",
         "password": "123",
-        "tastCounts": {
-            "active": 4,
+        "taskCounts": {
+            "active": 2,
             "newTask": 1,
             "completed": 1,
-            "failed": 1
+            "failed": 0
         },
         "tasks": [
             {
@@ -187,11 +187,11 @@ const employees = [
         "id": 5,
         "email": "raj.kumar@example.com",
         "password": "123",
-        "tastCounts": {
-            "active": 3,
+        "taskCounts": {
+            "active": 1,
             "newTask": 1,
-            "completed": 1,
-            "failed": 0
+            "completed": 2,
+            "failed": 1
         },
         "tasks": [
             {
