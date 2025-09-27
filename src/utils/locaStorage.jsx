@@ -17,7 +17,7 @@ const employees = [
                 "taskDescription": "Compile and analyze Q3 sales data for review.",
                 "taskDate": "2025-09-10",
                 "category": "Reporting",
-                "active": true,
+                "active": false,
                 "newTask": true,
                 "completed": false,
                 "failed": false
@@ -115,7 +115,7 @@ const employees = [
                 "category": "Development",
                 "active": true,
                 "newTask": true,
-                "completed": false,
+                "completed": true,
                 "failed": false
             },
             {
@@ -124,8 +124,8 @@ const employees = [
                 "taskDate": "2025-09-16",
                 "category": "Maintenance",
                 "active": true,
-                "newTask": false,
-                "completed": false,
+                "newTask": true,
+                "completed": true,
                 "failed": false
             },
             {
@@ -133,10 +133,10 @@ const employees = [
                 "taskDescription": "Perform system testing for the new release.",
                 "taskDate": "2025-09-22",
                 "category": "Testing",
-                "active": false,
-                "newTask": false,
-                "completed": false,
-                "failed": true
+                "active": true,
+                "newTask": true,
+                "completed": true,
+                "failed": false
             }
         ]
     },
