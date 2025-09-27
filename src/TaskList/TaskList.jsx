@@ -1,11 +1,12 @@
 import React from 'react'
 import AcceptTask from '../TaskList/AcceptTask'
+import NewTask from './NewTask'
 
 const TaskList = (employee) => {
     return (
         <div id="tasklist" className='h-[55vh] w-full  mt-10 flex items-center  gap-20 flex-nowrap overflow-x-auto'>
            <AcceptTask />
-           
+           <NewTask />
             <div className=' w-[300px] p-5 bg-blue-400 rounded-xl flex-shrink-0'>
                 <div className='flex justify-between items-center'>
                     <h3 className='bg-red-600 text-sm px-3 py-1 rounded'> High </h3>
