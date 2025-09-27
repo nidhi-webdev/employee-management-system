@@ -46,7 +46,7 @@ const App = () => {
       setUser('Employee')
       setemployee(employeeObj)
       localStorage.setItem('loggedInUser', JSON.stringify({role: 'Employee', employeeData: employeeObj}))
-      console.log("From HandleLogin function:", employeeObj)
+      // console.log("From HandleLogin function:", employeeObj)
     }
     else {
       alert("Invalid Credentials")

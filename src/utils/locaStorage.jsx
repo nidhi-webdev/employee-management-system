@@ -31,16 +31,6 @@ const employees = [
                 "newTask": false,
                 "completed": false,
                 "failed": false
-            },
-            {
-                "taskTitle": "Follow-up Emails",
-                "taskDescription": "Send follow-up emails to potential leads.",
-                "taskDate": "2025-09-05",
-                "category": "Communication",
-                "active": false,
-                "newTask": false,
-                "completed": true,
-                "failed": false
             }
         ]
     },
