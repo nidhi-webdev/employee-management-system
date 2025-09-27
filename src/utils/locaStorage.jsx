@@ -1,4 +1,4 @@
-localStorage.clear() // ← Uncomment this to refresh data
+// localStorage.clear() // 
 
 const employees = [
     {
