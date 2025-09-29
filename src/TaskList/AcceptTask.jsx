@@ -1,7 +1,6 @@
 import React from 'react'
 
-const AcceptTask = ({data, task}) => {
-  console.log("From Accepted task", data?.tasks)
+const AcceptTask = ({task}) => {
   console.log("From task", task)
   return (
     <div>
