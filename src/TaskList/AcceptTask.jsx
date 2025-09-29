@@ -11,8 +11,7 @@ const AcceptTask = ({data, task}) => {
                     <h4> {task.taskDate} </h4>
                 </div>
                 <h2 className='mt-5 text-2xl font-semibold'> {task.taskTitle} </h2>
-                <p className='text-sm mt-3'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste magnam voluptatem voluptas sint. Enim, ex a quaerat ad labore alias libero voluptate fugit voluptatem odio at, tempore quasi molestias voluptates.
+                <p className='text-sm mt-3'> {task.taskDescription}
                 </p>
                 <div className='flex justify-between mt-4'>
                     <button className='bg-green-600 py-1 px-2 text-sm'> Mark as Completed </button>
