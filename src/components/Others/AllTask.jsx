@@ -7,9 +7,9 @@ const AllTask = () => {
 
     return (
         <div className='bg-[#1c1c1c] p-5 mt-5 rounded overflow-auto h-50'>
-            {authdata.employees.map(function () {
-                return <div className='bg-red-400 mb-2 py-2 px-4 flex justify-between rounded text-white'>
-                    <h2> Nidhi </h2>
+            {authdata.employees.map(function (elem) {
+                return <div  className='bg-red-400 mb-2 py-2 px-4 flex justify-between rounded text-white'>
+                    <h2> {elem.email} </h2>
                     <h3> Make a UI Design </h3>
                     <h5> Status </h5>
                 </div>
