@@ -19,10 +19,10 @@ const AllTask = () => {
                 {authdata.employees.map(function (elem) {
                     return <div className='border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded text-white'>
                         <h2 className='w-1/5 text-white-600 px-2 py-2'> {elem.name} </h2>
-                        <h3 className='w-1/5 text-blue-600 px-2 py-2'> Task </h3>
-                        <h5 className='w-1/5 text-yellow-600 px-2 py-2'> Status </h5>
-                        <h5 className='w-1/5 text-green-600 px-2 py-2'> Status </h5>
-                        <h5 className='w-1/5 text-red-600 px-2 py-2'> Falied </h5>
+                        <h3 className='w-1/5 text-blue-600 px-2 py-2'> {elem.taskCounts.newTask} </h3>
+                        <h5 className='w-1/5 text-yellow-600 px-2 py-2'> {elem.taskCounts.active} </h5>
+                        <h5 className='w-1/5 text-green-600 px-2 py-2'> {elem.taskCounts.completed} </h5>
+                        <h5 className='w-1/5 text-red-600 px-2 py-2'> {elem.taskCounts.failed} </h5>
                     </div>
                 })}
             </div>
