@@ -6,7 +6,7 @@ const AllTask = () => {
     console.log("All Task", authdata.employees)
 
     return (
-        <div className='bg-[#1c1c1c] p-5 mt-5 rounded h-55'>
+        <div className='bg-[#1c1c1c] p-5 mt-5 rounded'>
             <div className='bg-red-400 mb-2 py-2 px-4 flex justify-between rounded text-white'>
                 <h2 className='w-1/5  px-2 py-2'> Employee Name </h2>
                 <h3 className='w-1/5  px-2 py-2'> New Task </h3>
@@ -15,7 +15,7 @@ const AllTask = () => {
                 <h5 className='w-1/5  px-2 py-2'> Failed Task </h5>
 
             </div>
-            <div className='h-[80%] overflow-auto' >
+            <div className='' >
                 {authdata.employees.map(function (elem) {
                     return <div className='border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded text-white'>
                         <h2 className='w-1/5 text-white-600 px-2 py-2'> {elem.name} </h2>
