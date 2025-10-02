@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 
 const CreateTask = () => {
+  const [titleTask, setTitleTask] = useState('')
+  const [date, setDate] = useState('')
+  const [asignTo, setAsignTo] = useState('')
+  const [category, setCategory] = useState('')
   const [description, setDescription] = useState('')
 
   const handleSubmit = (e) => {
@@ -9,7 +13,6 @@ const CreateTask = () => {
       alert('Please enter a description')
       return
     }
-    // TODO: save task to state or localStorage
     alert('Task created')
     setDescription('')
   }
@@ -25,17 +28,17 @@ const CreateTask = () => {
                         </div>
                         <div>
                             <h3 className='text-sm text-gray-300 mb-0.5'> Date </h3>
-                            <input type='date' className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
+                            <input type='date' className='text-sm text-white py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
                         </div>
 
                         <div>
                             <h3 className='text-sm text-gray-300 mb-0.5'> Asign To  </h3>
-                            <input type='text' placeholder='Employee Name' className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
+                            <input type='text' placeholder='Employee Name' className='text-sm text-white py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
                         </div>
 
                         <div>
                             <h3 className='text-sm text-gray-300 mb-0.5'> Category </h3>
-                            <input type='text' placeholder='Design, Dev etc' className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
+                            <input type='text' placeholder='Design, Dev etc' className='text-sm text-white py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
                         </div>
                     </div>
 
@@ -47,7 +50,7 @@ const CreateTask = () => {
                           id='description'
                           cols="30"
                           rows="10"
-                          className='w-full h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border-[1px] border-gray-400'
+                          className='w-full  text-white h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border-[1px] border-gray-400'
                           value={description}
                           onChange={e => setDescription(e.target.value)}
                         />
