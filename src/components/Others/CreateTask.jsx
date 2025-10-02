@@ -14,6 +14,7 @@ const CreateTask = () => {
     //   return
     // }
     // alert('Task created')
+    console.log(titleTask, date, asignTo, category, description)
     setTitleTask('')
     setDate('')
     setAsignTo('')
