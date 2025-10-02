@@ -20,7 +20,7 @@ const CreateTask = () => {
                     <div className='w-1/2'>
                         <div>
                             <h3 className='text-sm text-gray-300 mb-0.5'> Task Tittle </h3>
-                            <input type='text' placeholder='Make a UI Design' className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400'
+                            <input type='text' placeholder='Make a UI Design' className='text-sm text-white py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400 '
                             />
                         </div>
                         <div>
