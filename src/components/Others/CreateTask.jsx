@@ -9,11 +9,15 @@ const CreateTask = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!description.trim()) {
-      alert('Please enter a description')
-      return
-    }
-    alert('Task created')
+    // if (!description.trim()) {
+    //   alert('Please enter a description')
+    //   return
+    // }
+    // alert('Task created')
+    setTitleTask('')
+    setDate('')
+    setAsignTo('')
+    setCategory('')
     setDescription('')
   }
 
