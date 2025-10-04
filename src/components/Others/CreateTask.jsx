@@ -23,9 +23,9 @@ const CreateTask = () => {
       completed: false,
       failed: false
     }
-
-    console.log(newTask)
     setTask(newTask)
+    const data = JSON.parse(localStorage.getItem('Employees'))
+    console.log("From Create Task", data)
 
     setTitleTask('')
     setDate('')
