@@ -28,10 +28,11 @@ const CreateTask = () => {
     data.map((elem) => {
       if(asignTo == elem.name) {
         elem.tasks.push(newTask)
-        console.log("This is the one" , elem)
+        // console.log("This is the one" , elem)
       }
       
     })
+    localStorage.setItem('Employees', JSON.stringify(data))
 
     setTitleTask('')
     setDate('')

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AcceptTask = ({task}) => {
-  console.log("From task", task)
+  
   return (
     <div>
        <div className=' w-[300px] p-5 bg-yellow-400 rounded-xl flex-shrink-0'>
