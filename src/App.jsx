@@ -13,34 +13,34 @@ const App = () => {
   const [employee, setemployee] = useState(null)
 
   const authData = useContext(AuthContext)
- 
+
   useEffect(() => {
     // Initialize localStorage with data if not already present
     if (!localStorage.getItem('Employees') || !localStorage.getItem('Admin')) {
       setLocalStorage()
     }
-    
-    if(authData) {
+
+    if (authData) {
       const loggedInUser = localStorage.getItem("loggedInUser")
-      if(loggedInUser) {
+      if (loggedInUser) {
         const userData = JSON.parse(loggedInUser)
         setUser(userData.role)
         setemployee(userData.employeeData)
       }
     }
   }, [authData])
-  
+
 
   const handleLogin = (email, password) => {
     if (email === 'admin@example.com' && password === '123') {
       setUser('Admin')
       setemployee({ email: 'admin@example.com', role: 'Admin' })
-      localStorage.setItem('loggedInUser', JSON.stringify({role: 'Admin', employeeData: { email: 'admin@example.com', role: 'Admin' }}))
+      localStorage.setItem('loggedInUser', JSON.stringify({ role: 'Admin', employeeData: { email: 'admin@example.com', role: 'Admin' } }))
     } else if (authData && authData.employees && authData.employees.find(e => e.email === email && e.password === password)) {
       const employeeObj = authData.employees.find(e => e.email === email && e.password === password)
       setUser('Employee')
       setemployee(employeeObj)
-      localStorage.setItem('loggedInUser', JSON.stringify({role: 'Employee', employeeData: employeeObj}))
+      localStorage.setItem('loggedInUser', JSON.stringify({ role: 'Employee', employeeData: employeeObj }))
       // console.log("From HandleLogin function:", employeeObj)
     }
     else {
@@ -59,7 +59,7 @@ const App = () => {
     <div className='m-10'>
       {!user ? <Login handleLogin={handleLogin} /> : ''}
       {user === 'Admin' && <AdminDashboard handleLogout={handleLogout} employee={employee} />}
-      {user === 'Employee' && <EmployeeDashboard handleLogout={handleLogout}  employee={employee}  />}
+      {user === 'Employee' && <EmployeeDashboard handleLogout={handleLogout} employee={employee} />}
     </div>
   )
 }
