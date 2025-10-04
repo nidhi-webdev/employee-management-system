@@ -26,10 +26,10 @@ const CreateTask = () => {
     setNewTask(newTask)
     const data = JSON.parse(localStorage.getItem('Employees'))
     data.map((elem) => {
-      if(asignTo == elem.name) {
+      if (asignTo == elem.name) {
         elem.tasks.push(newTask)
       }
-      
+
     })
     localStorage.setItem('Employees', JSON.stringify(data))
 
