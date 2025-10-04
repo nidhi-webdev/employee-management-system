@@ -25,7 +25,9 @@ const CreateTask = () => {
     }
     setTask(newTask)
     const data = JSON.parse(localStorage.getItem('Employees'))
-    console.log("From Create Task", data)
+    data.map((elem) => {
+      console.log("Hello from Create Task", elem)
+    })
 
     setTitleTask('')
     setDate('')
