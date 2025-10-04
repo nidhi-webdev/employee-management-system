@@ -7,6 +7,8 @@ const CreateTask = () => {
   const [category, setCategory] = useState('')
   const [description, setDescription] = useState('')
 
+  const [Task, setTask] = useState([])
+
   const handleSubmit = (e) => {
     e.preventDefault()
     // if (!description.trim()) {
@@ -14,7 +16,7 @@ const CreateTask = () => {
     //   return
     // }
     // alert('Task created')
-    console.log(titleTask, date, asignTo, category, description)
+    setTask({titleTask, date, asignTo, category, description, active:false, newTask:true, completed:false, failed: false})
     setTitleTask('')
     setDate('')
     setAsignTo('')
