@@ -24,7 +24,7 @@ const AuthProvider = ({ children }) => {
 
   return (
     <div>
-      <AuthContext.Provider value={userData}>
+      <AuthContext.Provider value={{...userData, setUserData: setuserData}}>
         {children}
       </AuthContext.Provider>
     </div>

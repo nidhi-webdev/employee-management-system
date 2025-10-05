@@ -10,7 +10,7 @@ const CreateTask = () => {
 
   const [employees, setEmployees] = useState([])
 
-  const { setAuthData } = useContext(AuthContext)
+  const { setUserData } = useContext(AuthContext)
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('Employees'))
@@ -54,7 +54,7 @@ const CreateTask = () => {
       localStorage.setItem('Employees', JSON.stringify(updatedEmployees))
       setEmployees(updatedEmployees)  
 
-      setAuthData({ employees: updatedEmployees })
+      setUserData({ employees: updatedEmployees, admin: JSON.parse(localStorage.getItem('Admin')) })
 
       setTitleTask('')
       setDate('')
