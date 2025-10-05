@@ -24,7 +24,7 @@ const CreateTask = () => {
       completed: false,
       failed: false
     }
-    
+
 
 
     const data = JSON.parse(localStorage.getItem('Employees'))
@@ -43,7 +43,10 @@ const CreateTask = () => {
       }
 
     })
-    localStorage.setItem('Employees', JSON.stringify(data))
+    if (taskAssigned) {
+      localStorage.setItem('Employees', JSON.stringify(data))
+    }
+
 
     setTitleTask('')
     setDate('')
