@@ -45,14 +45,18 @@ const CreateTask = () => {
     })
     if (taskAssigned) {
       localStorage.setItem('Employees', JSON.stringify(data))
-    }
 
-
-    setTitleTask('')
+      setAuthData({ employee: data })
+      setTitleTask('')
     setDate('')
     setAsignTo('')
     setCategory('')
     setDescription('')
+    alert('Task created successfully!')
+    } 
+
+
+    
   }
 
   return (
