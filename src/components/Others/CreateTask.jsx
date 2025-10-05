@@ -7,6 +7,7 @@ const CreateTask = () => {
   const [asignTo, setAsignTo] = useState('')
   const [category, setCategory] = useState('')
   const [description, setDescription] = useState('')
+
   const [employees, setEmployees] = useState([])
 
   const { setAuthData } = useContext(AuthContext)
@@ -34,12 +35,11 @@ const CreateTask = () => {
     }
 
 
-
-    const data = JSON.parse(localStorage.getItem('Employees'))
+    const updatedEmployees = [...employees]
     let taskAssigned = false
 
-    data.forEach((employee) => {
-      if (asignTo == employee.name) {
+    updatedEmployees.forEach((employee) => {
+      if (asignTo === employee.name) {
         employee.tasks.push(newTask)
 
         employee.taskCounts.newTask += 1
@@ -47,14 +47,14 @@ const CreateTask = () => {
 
         taskAssigned = true
         console.log(`Task assigned to ${employee.name}`)
-
       }
-
     })
+    
     if (taskAssigned) {
-      localStorage.setItem('Employees', JSON.stringify(data))
+      localStorage.setItem('Employees', JSON.stringify(updatedEmployees))
+      setEmployees(updatedEmployees)  
 
-      setAuthData({ employees: data })
+      setAuthData({ employees: updatedEmployees })
 
       setTitleTask('')
       setDate('')
