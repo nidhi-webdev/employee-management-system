@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { AuthContext } from '../../context/AuthProvider'
 
 const CreateTask = () => {
@@ -7,8 +7,16 @@ const CreateTask = () => {
   const [asignTo, setAsignTo] = useState('')
   const [category, setCategory] = useState('')
   const [description, setDescription] = useState('')
+  const [employees, setEmployees] = useState([])
 
   const { setAuthData } = useContext(AuthContext)
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('Employees'))
+    if (data) {
+      setEmployees(data)
+    }
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -34,8 +42,8 @@ const CreateTask = () => {
       if (asignTo == employee.name) {
         employee.tasks.push(newTask)
 
-        employee.tasks.newTask += 1
-        employee.tasks.active += 1
+        employee.taskCounts.newTask += 1
+        employee.taskCounts.active += 1
 
         taskAssigned = true
         console.log(`Task assigned to ${employee.name}`)
@@ -46,17 +54,20 @@ const CreateTask = () => {
     if (taskAssigned) {
       localStorage.setItem('Employees', JSON.stringify(data))
 
-      setAuthData({ employee: data })
+      setAuthData({ employees: data })
+
       setTitleTask('')
-    setDate('')
-    setAsignTo('')
-    setCategory('')
-    setDescription('')
-    alert('Task created successfully!')
-    } 
+      setDate('')
+      setAsignTo('')
+      setCategory('')
+      setDescription('')
+      alert('Task created successfully!')
+    } else {
+      alert(`Employee "${asignTo}" not found. Available employees: Nidhi, Amit, Panwal, Sikha, Laura`)
+    }
 
 
-    
+
   }
 
   return (
@@ -85,12 +96,24 @@ const CreateTask = () => {
 
           <div>
             <h3 className='text-sm text-gray-300 mb-0.5'> Asign To  </h3>
-            <input
+            <select
               value={asignTo}
               onChange={(e) => {
                 setAsignTo(e.target.value)
               }}
-              type='text' placeholder='Employee Name' className='text-sm text-white py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4 placeholder-gray-400' />
+              className='text-sm text-white py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4'
+              required>
+              <option value="" className='bg-gray-800'>Select Employee</option>
+              {employees.map((employee) => (
+                <option
+                  key={employee.id}
+                  value={employee.name}
+                  className='bg-gray-800'
+                >
+                  {employee.name}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div>
