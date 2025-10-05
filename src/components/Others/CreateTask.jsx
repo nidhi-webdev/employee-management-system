@@ -25,12 +25,21 @@ const CreateTask = () => {
       failed: false
     }
     
-    console.log("Creating task", newTask)
-    
+
+
     const data = JSON.parse(localStorage.getItem('Employees'))
-    data.map((elem) => {
-      if (asignTo == elem.name) {
-        elem.tasks.push(newTask)
+    let taskAssigned = false
+
+    data.forEach((employee) => {
+      if (asignTo == employee.name) {
+        employee.tasks.push(newTask)
+
+        employee.tasks.newTask += 1
+        employee.tasks.active += 1
+
+        taskAssigned = true
+        console.log(`Task assigned to ${employee.name}`)
+
       }
 
     })
