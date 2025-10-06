@@ -1,10 +1,10 @@
-// localStorage.clear() // ← Uncomment to refresh data 
+// localStorage.clear() //
 
 const employees = [
     {
         "id": 1,
         "email": "john.doe@example.com",
-        "name": "Nidhi",
+        "name": "john",
         "password": "123",
         "taskCounts": {
             "active": 1,
@@ -38,7 +38,7 @@ const employees = [
     {
         "id": 2,
         "email": "jane.smith@example.com",
-        "name": "Amit",
+        "name": "jane",
         "password": "123",
         "taskCounts": {
             "active": 2,
@@ -92,7 +92,7 @@ const employees = [
     {
         "id": 3,
         "email": "mike.jordan@example.com",
-        "name": "Panwal",
+        "name": "mike",
         "password": "123",
         "taskCounts": {
             "active": 2,
@@ -146,7 +146,7 @@ const employees = [
     {
         "id": 4,
         "email": "lisa.wong@example.com",
-        "name": "Sikha",
+        "name": "Lisa",
         "password": "123",
         "taskCounts": {
             "active": 2,
@@ -190,7 +190,7 @@ const employees = [
     {
         "id": 5,
         "email": "raj.kumar@example.com",
-        "name": "Laura",
+        "name": "Raj",
         "password": "123",
         "taskCounts": {
             "active": 1,
